@@ -1,6 +1,6 @@
 # 🔥 Gatecraft Chaosphere Monitor
 
-📄 **[View the script → Chaosphere_monitor.py](https://github.com/Vlkodlak148/chaosphere-monitor/blob/main/Chaosphere_monitor)**
+📄 **[View the script → Chaosphere_monitor.py](https://github.com/Vlkodlak148/chaosphere-monitor/blob/main/Chaosphere_monitor.py)**
 
 A Python script that watches [dynmap.gatecraft.cz](https://dynmap.gatecraft.cz) in real time and sends you a **Discord notification** whenever an enemy enters the Chaosphere world.
 
