@@ -127,3 +127,9 @@ Every 30 seconds the script calls the Gatecraft Dynmap API:
 https://dynmap.gatecraft.cz/up/world/world/{timestamp}
 ```
 This returns a live list of all online players and which world they are in. The script filters for anyone in `world_chaos`, ignores you and your allies, and fires a Discord webhook if any enemies remain.
+
+---
+
+## 📄 License
+
+This software is distributed under the GNU General Public License v3.0 (GPL-3.0). See [LICENSE](./LICENSE) for details.
