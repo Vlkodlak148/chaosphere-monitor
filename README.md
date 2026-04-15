@@ -49,12 +49,25 @@ pip install requests
 1. Discord **Settings → Advanced → enable Developer Mode**
 2. Right-click your username anywhere → **Copy User ID**
 
-### 4. Edit the config at the top of the script
+### 4. Set up your credentials via `.env`
 
+Copy the example file and fill in your values:
+```bash
+cp .env.example .env
+nano .env
+```
+
+Your `.env` file should look like this:
+```
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/...
+DISCORD_USER_ID=123456789012345678
+```
+
+> ⚠️ The `.env` file is in `.gitignore` — it will **never** be uploaded to GitHub.
+
+Then edit the rest of the config (allies, your MC username etc.) at the top of the script:
 ```python
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/..."  # your webhook
-DISCORD_USER_ID     = "123456789012345678"                    # your Discord ID
-MY_MINECRAFT_NAME   = "YourNameHere"                          # your MC username
+MY_MINECRAFT_NAME = "YourNameHere"
 ALLIES = [
     "FriendName1",
     "FriendName2",
@@ -104,22 +117,16 @@ Keep the terminal open — the script runs continuously. Press `Ctrl+C` to stop.
 | Chaosphere becomes empty | ✅ "All clear" message |
 
 ---
- 
+
 ## ⚠️ Security Warning
- 
-**Never commit your real `DISCORD_WEBHOOK_URL` to a public repository.** Anyone who gets it can send messages to your Discord channel.
- 
-If you fork this repo, the webhook URL and Discord User ID fields are intentionally left as placeholders:
-```python
-DISCORD_WEBHOOK_URL = "YOUR_WEBHOOK_URL_HERE"
-DISCORD_USER_ID     = ""
-```
-Fill these in **only on your local machine** and never commit that change. A good way to prevent accidentally pushing it is to run:
-```bash
-git update-index --assume-unchanged Chaosphere_monitor
-```
-This tells git to ignore local changes to the file so you can't accidentally commit your credentials.
- 
+
+**Never commit your real `.env` file to a public repository.** Anyone who gets your webhook URL can send messages to your Discord channel.
+
+If you fork this repo:
+1. The `.env` file is already in `.gitignore` so it can never be accidentally pushed
+2. Copy `.env.example` to `.env` and fill in your credentials locally
+3. The script itself contains no secrets — only safe placeholders
+
 ---
 
 ## 🌐 How It Works
