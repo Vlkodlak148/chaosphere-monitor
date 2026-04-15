@@ -18,7 +18,22 @@ Usage:
 import requests
 import time
 import json
+import os
 from datetime import datetime
+
+# Load .env file if it exists
+def load_env(path=".env"):
+    try:
+        with open(path) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, _, value = line.partition("=")
+                    os.environ.setdefault(key.strip(), value.strip())
+    except FileNotFoundError:
+        pass
+
+load_env()
 
 # ════════════════════════════════════════════════
 #  ⚙️  CONFIGURATION — edit these values!
@@ -26,11 +41,11 @@ from datetime import datetime
 
 # Your Discord Webhook URL
 # How to get one: Discord Server → Settings → Integrations → Webhooks → New Webhook → Copy URL
-DISCORD_WEBHOOK_URL = "YOUR_WEBHOOK_URL_HERE"
+DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL", "YOUR_WEBHOOK_URL_HERE")
 
 # Your Discord User ID (to @mention you). Leave "" to disable pings.
 # How to get: Discord Settings → Advanced → Developer Mode ON → right-click your name → Copy User ID
-DISCORD_USER_ID = ""  # e.g. "123456789012345678"
+DISCORD_USER_ID = os.getenv("DISCORD_USER_ID", "")  # e.g. "123456789012345678"
 
 # Chaosphere world name in dynmap (confirmed: "world_chaos").
 # Set to None to run in discovery mode and print all active world names.
