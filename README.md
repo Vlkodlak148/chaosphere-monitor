@@ -1,3 +1,9 @@
+> [!CAUTION]
+> **This repository is abandoned.** It is no longer maintained and will likely not receive any future updates.
+>
+> Looking for a similar tracker? Try [https://gctracker.xyz/](https://gctracker.xyz/). This is a separate project and is not affiliated with me.
+
+
 # 🔥 Gatecraft Chaosphere Monitor
 
 📄 **[View the script → Chaosphere_monitor.py](https://github.com/Vlkodlak148/chaosphere-monitor/blob/main/Chaosphere_monitor.py)**
